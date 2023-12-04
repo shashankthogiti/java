@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+
+public class MyCustomList<T> { // here we have both String and Integer so we use generic method to short
+												// the
+								// code i.e., we replace it with 'T'
+
+	ArrayList<T> list = new ArrayList<>(); // replacing Integer or String with T
+	
+	public void addElement(T element) { // replacing Integer or/and String with T
+		list.add(element);
+	}
+	
+	public void removeElement(T element) { // replacing Integer or/and String with T
+		list.remove(element);
+	}
+
+	@Override
+	public String toString() { // we can not replaceString with T in this line
+		return list.toString();
+	}
+
+	public T get(int index) { // replacing Integer and String with T
+		return list.get(index);
+	}
+
+public class GenericsRunner2 {
+
+	public static void main(String[] args) {
+		MyCustomList<String> list = new MyCustomList<>();
+		list.addElement("Element 1");
+		list.addElement("Element 2");
+		
+		String value = list.get(0);
+
+		System.out.println(value);
+
+		MyCustomList<Integer> list2 = new MyCustomList<>();
+		list2.addElement(Integer.valueOf(5));
+		list2.addElement(Integer.valueOf(7));
+
+		Integer number = list2.get(0);
+
+		System.out.println(number);
+
+	}
+
+}
