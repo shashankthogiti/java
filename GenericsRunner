@@ -1,0 +1,32 @@
+public class GenericsRunner {
+
+	public static void main(String[] args) {
+		MyCustomList<String> list = new MyCustomList<>();
+		list.addElement("Element 1");
+		list.addElement("Element 2");
+		System.out.println(list);
+
+		MyCustomList<Integer> list2 = new MyCustomList<>();
+		list2.addElement(Integer.valueOf(5));
+		list2.addElement(Integer.valueOf(7));
+		System.out.println(list2);
+
+	}
+
+public class MyCustomList<T> {
+
+	ArrayList<T> list = new ArrayList<>();
+	
+	public void addElement(T element) {
+		list.add(element);
+	}
+	
+	public void removeElement(T element) {
+		list.remove(element);
+	}
+
+	@Override
+	public String toString() {
+		return list.toString();
+	}
+}
