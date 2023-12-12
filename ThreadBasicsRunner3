@@ -1,0 +1,56 @@
+class Tasks1 extends Thread { // method1:- extends class
+	@Override
+	public void run() { // SIGNATURE
+		System.out.println("Task1 started");
+
+		for (int i = 101; i <= 199; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("Task1 done");
+	}
+}
+
+class Task2 implements Runnable { // method2:- implements Runnable
+
+	@Override
+	public void run() {
+		System.out.println("Task2 started");
+
+		for (int i = 201; i <= 299; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("Task2 Done");
+	}
+
+}
+
+public class ThreadBasicsRunner3 {
+
+	public static void main(String[] args) {
+		// Task 1
+		System.out.println("Task1 kicked off");
+		Tasks1 task1 = new Tasks1();
+		task1.start();
+
+		// Task 2
+		System.out.println("Task2 kicked off");
+		Task2 task2 = new Task2();
+		Thread task2Thread = new Thread(task2);
+		task2Thread.start();
+
+		// Task 3
+		System.out.println("Task3 kicked off");
+		for (int i = 301; i <= 399; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("Task3 done");
+
+		System.out.println("Main Done");
+
+	}
+
+}
+
+/*
+ * Threading are two type . They are:- 1. extends Threads 2. implements Runnable
+ */
