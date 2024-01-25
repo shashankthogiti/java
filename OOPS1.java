@@ -1,33 +1,41 @@
-package ObjectOrientedProgrammingLanguage.java;
+package ObjectOrientedProgrammingLanguageAbstraction.java;
 
-class Pens {
-	String color;
-	String type;
+//Abstraction in java is hiding the implementation detail and shows only essential feature.
+//The abstract be perforn abstract and non-abstract method
 
-	public void write() {
-		System.out.println("Writng Something");
-	}
+abstract class Animal1 {
+	abstract void walk();// abstract method
 
-	public void printColors() {
-		System.out.println(this.color);
+	public void eat() { // non-abstract method
+		System.out.println("Animal eats");
 	}
 }
 
+class Horse1 extends Animal1 {
+	@Override
+	public void walk() {
+		System.out.println("walks on 4 legs");
+	}
+}
+
+class Hen1 extends Animal1 {
+	@Override
+	public void walk() {
+		System.out.println("walk s on 2 legs");
+	}
+}
 
 public class OOPS1 {
 
 	public static void main(String[] args) {
+		Horse1 horse1 = new Horse1();
+		horse1.walk();
+		horse1.eat();
 
-		Penss pen1 = new Penss();
-		pen1.color = "blue";
-		pen1.type = "Gel";
+		Hen1 hen1 = new Hen1();
+		hen1.walk();
+		hen1.eat();
 
-		Penss pen2 = new Penss();
-		pen2.color = "black";
-		pen2.type = "ballPoint";
-
-		pen1.printColors();
-		pen2.printColors();
 	}
 
 }

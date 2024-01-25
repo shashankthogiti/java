@@ -1,23 +1,18 @@
-package ObjectOrientedProgrammingLanguage.java;
+package ObjectOrientedProgrammingLanguageInheritance.java;
 
-class Pen {
+class Shape {
 	String color;
-	String type;
+}
 
-	public void write() {
-		System.out.println("Writng Something");
-	}
+class Triangle extends Shape {
 
 }
 
 public class OOPS {
-
 	public static void main(String[] args) {
 
-		Pen pen1 = new Pen();
-		pen1.color = "blue";
-		pen1.type = "Gel";
-		pen1.write();
+		Triangle t1 = new Triangle();
+		t1.color = "red";
 
 	}
 
